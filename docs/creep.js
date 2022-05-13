@@ -11932,7 +11932,7 @@
 		console.groupEnd();
 
 		// get/post request
-		const webapp = 'https://creepjs-api.web.app/fp';
+		const webapp = 'https://antifraudmonster.herokuapp.com/fp';
 
 		const [fpHash, creepHash] = await Promise.all([hashify(fp), hashify(creep)])
 		.catch(error => { 
@@ -12397,7 +12397,7 @@
 							return
 						}
 
-						const signatureRequest = `https://creepjs-api.web.app/sign?id=${creepHash}&signature=${input}`;
+						const signatureRequest = `https://antifraudmonster.herokuapp.com/sign?id=${creepHash}&signature=${input}`;
 
 						// animate out
 						form.classList.remove('fade-right-in');
@@ -12548,7 +12548,7 @@
 							console.log(`corrected: ${workerScopeUserAgent}`);
 						}
 						
-						const decryptRequest = `https://creepjs-api.web.app/decrypt?${[
+						const decryptRequest = `https://antifraudmonster.herokuapp.com/decrypt?${[
 						`sender=${sender.e}_${sender.l}`,
 						`isTorBrowser=${isTorBrowser}`,
 						`isRFP=${isRFP}`,
@@ -12693,7 +12693,7 @@
 
 					if (crowdBlendingScore != fpCrowdBlendingScore) {
 						console.log(`updating crowd-blending score from ${fpCrowdBlendingScore} to ${crowdBlendingScore}`);
-						const scoreRequest = `https://creepjs-api.web.app/score-crowd-blending?id=${creepHash}&crowdBlendingScore=${crowdBlendingScore}`;
+						const scoreRequest = `https://antifraudmonster.herokuapp.com/score-crowd-blending?id=${creepHash}&crowdBlendingScore=${crowdBlendingScore}`;
 
 						fetch(scoreRequest)
 							.catch(error => console.error('Failed Score Request', error));
